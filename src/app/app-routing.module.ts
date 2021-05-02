@@ -9,6 +9,13 @@ const routes: Routes = [
         (m) => m.AuthModule
       ),
   },
+  {
+    path: 'post',
+    loadChildren: () =>
+      import('./post/post.module').then(
+        (m) => m.PostModule
+      ),
+  },
 ];
 
 @NgModule({

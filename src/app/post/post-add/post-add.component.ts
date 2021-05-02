@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Injectable, OnDestroy, OnInit, Output, ViewEncapsulation } from "@angular/core";
 import { AbstractControl, FormControl, FormGroup } from "@angular/forms";
 import { Validators, Editor, Toolbar } from "ngx-editor";
-import {FileUploadService} from '../../../Service/file-upload.service'
 import jsonDoc from "../../post/customeditor/doc";
 import {schema} from "ngx-editor";
 import plugins from "../plugin";
 import nodeViews from "../nodeviews";
+import { FileUploadService } from "src/app/shared/service/file-upload.service";
 
 @Component({
   selector: 'app-post-add',

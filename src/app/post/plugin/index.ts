@@ -4,10 +4,10 @@ import { keymap } from 'prosemirror-keymap';
 import { toggleMark, baseKeymap } from 'prosemirror-commands';
 import { Plugin } from 'prosemirror-state';
 
-import { image } from 'ngx-editor/plugins';
 
 import { buildInputRules } from './input-rules';
 import schema from '../../post/customeditor/schema';
+import { image } from 'ngx-editor/plugins';
 
 const isMacOs = /Mac/.test(navigator.platform);
 
