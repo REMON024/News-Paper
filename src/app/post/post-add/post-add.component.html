@@ -1,0 +1,67 @@
+<div class="container">
+	<h2 class="title">Full featured editor demo</h2>
+
+	<div class="content">
+		<div class="display">
+			<!-- <div class="logo">
+				<img src="../assets/ngx-editor.svg" />
+				<div class="subtitle">Rich Text Editor for angular using ProseMirror</div>
+			</div> -->
+		</div>
+		<div class="row" style="margin-bottom:15px;">
+			<div class="col-md-3">
+			  <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+			  <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+			</div>
+			<div class="col-md-4">
+			  <span class="upload" *ngIf="progress > 0">
+				{{progress}}%
+			  </span>
+			  <span class="upload" *ngIf="message">
+				{{message}}
+			  </span>
+			</div>
+		  </div>
+
+		<!-- <form [formGroup]="form" (ngSubmit)="save(editorContent)">
+			<div class="editor">
+				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar" [customMenuRef]="Customeditor">
+				</ngx-editor-menu>
+				<ngx-editor [editor]="editor" formControlName="editorContent">
+				</ngx-editor>
+            </div>
+            <button class="button" type="submit">Purchase</button>
+		</form> -->
+
+		<div class="editor">
+            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar" [customMenuRef]="Customeditor">
+            </ngx-editor-menu>
+      <ngx-editor [editor]="editor" [(ngModel)]="html">
+      </ngx-editor>
+    </div>
+    <button class="button" (click)="save(html)" type="submit">Save</button>
+
+		<!-- custom menu -->
+		<ng-template #Customeditor>
+			<app-custom-editor [editor]="editor"></app-custom-editor>
+		</ng-template>
+	</div>
+</div>
+
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+		<th scope="col">Image</th>
+		<th scope="col">Name</th>
+		<th scope="col">Address</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><img src='https://localhost:44339/Resources/Image_03-05-2021/03May202101054.png' alt="profile picture" style="width:200px; height:100px;"></td>
+		<td>Name</td>
+		<td>Address</td>
+	  </tr>
+	</tbody>
+  </table>

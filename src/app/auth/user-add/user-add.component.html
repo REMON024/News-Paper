@@ -1,0 +1,93 @@
+<div class="animated fadeIn">
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <strong>Add</strong> User
+            </div>
+            <div class="card-body">
+                <!-- <div class="form-group row">
+                  <label class="col-md-3 col-form-label">Static</label>
+                  <div class="col-md-9">
+                    <p class="form-control-static">Username</p>
+                  </div>
+                </div> -->
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="text-input">User Name</label>
+                  <div class="col-md-9">
+                    <input type="text" id="text-input" name="text-input" [(ngModel)]="user.userName" class="form-control" placeholder="User Name">
+                    <span class="help-block">This is a help text</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Full Name</label>
+                    <div class="col-md-9">
+                      <input type="text" id="text-input" name="text-input" [(ngModel)]="user.fullName" class="form-control" placeholder="Full Name">
+                      <span class="help-block">This is a help text</span>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="email-input">Email</label>
+                  <div class="col-md-9">
+                    <input type="email" id="email-input" name="email-input" [(ngModel)]="user.email" class="form-control" placeholder="Enter Email" autocomplete="email">
+                    <span class="help-block">Please enter your email</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="email-input">Mobile No</label>
+                    <div class="col-md-9">
+                      <input type="text" id="mobile-input" name="mobile-input" [(ngModel)]="user.phoneNumber" class="form-control" placeholder="Mobile No" autocomplete="email">
+                      <span class="help-block">Please enter your email</span>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="password-input">Password</label>
+                  <div class="col-md-9">
+                    <input type="password" id="password-input" name="password-input" [(ngModel)]="user.password" class="form-control" placeholder="Password" autocomplete="current-password">
+                    <span class="help-block">Please enter a complex password</span>
+                  </div>
+                </div>
+                <!-- <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="date-input">Date Input</label>
+                  <div class="col-md-9">
+                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date">
+                    <span class="help-block">Please enter a valid date</span>
+                  </div>
+                </div> -->
+                <!-- <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="disabled-input">Disabled Input</label>
+                  <div class="col-md-9">
+                    <input type="text" id="disabled-input" name="disabled-input" class="form-control" placeholder="Disabled" disabled>
+                  </div>
+                </div> -->
+                <!-- <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="textarea-input">Textarea</label>
+                  <div class="col-md-9">
+                    <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
+                  </div>
+                </div> -->
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="select1">Role</label>
+                  <div class="col-md-9">
+                    <select id="select1" [(ngModel)]="roleId" name="select1" class="form-control">
+                      <option [value]="item.Id" *ngFor="let item of lstRole">{{item.name}}</option>
+                    
+                    </select>
+                  </div>
+                </div>
+                
+
+            </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+          </div>
+        
+        </div>
+        <div class="col-md-3"></div>
+
+      </div>
+</div>
