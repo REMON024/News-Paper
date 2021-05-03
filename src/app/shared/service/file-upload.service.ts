@@ -16,9 +16,8 @@ export class FileUploadService {
     let fileToUpload = <File>data[0];
     const formData = new FormData();
     let filename=fileToUpload.name+new Date().toLocaleTimeString()
-    console.log(filename)
     formData.append('file', fileToUpload, fileToUpload.name);
-    return this.http.post(this.authService.APPSERVER+'/api/Upload/UploadFile', formData, {reportProgress: true, observe: 'events'})
+    return this.http.post(this.authService.APPSERVER+'/Upload/UploadFile', formData)
   }
 }
 

@@ -7,7 +7,7 @@
 				<label class="col-md-3 col-form-label" for="select1">Category</label>
 				<div class="col-md-9">
 				  <select id="select1" [(ngModel)]="post.categoryId" name="select1" class="form-control">
-					<option [value]="item.Id" *ngFor="let item of lstCategory">{{item.name}}</option>
+					<option [value]="item.id" *ngFor="let item of lstCategory">{{item.name}}</option>
 				  
 				  </select>
 				</div>
@@ -23,8 +23,10 @@
 			  <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
 			  <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
 			</div>
-			<div col-md-4>
-				<img src='https://localhost:44339/Resources/Image_03-05-2021/03May202101054.png' alt="profile picture" style="width:60px; height:60px;">
+			<div class="col-md-4" *ngIf="imageUrl">
+				<img [src]="imageUrl.url" alt="profile picture" style="width:60px; height:60px;">
+
+				<!-- <img src="localhost:44339\Code-base-Api\Resources\Image_03-05-2021\03May2021054328.png" alt="profile picture" style="width:60px; height:60px;"> -->
 			</div>
 			<div class="col-md-4">
 			  <span class="upload" *ngIf="progress > 0">

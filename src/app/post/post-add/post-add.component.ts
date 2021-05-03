@@ -8,6 +8,7 @@ import nodeViews from "../nodeviews";
 import { FileUploadService } from "src/app/shared/service/file-upload.service";
 import { CategoryService } from "src/app/shared/service/category.service";
 import { Post } from "src/app/model/post";
+import { PostService } from '../../shared/service/post.service';
 
 @Component({
   selector: 'app-post-add',
@@ -23,7 +24,8 @@ export class PostAddComponent implements OnInit, OnDestroy {
   public progress: number;
   public message: string;
   public filename:string;
-  public lstCategory=[]
+  public lstCategory=[];
+  public imageUrl:any
   public post:Post=new Post();
   @Output() public onUploadFinished = new EventEmitter();
 
@@ -46,7 +48,7 @@ export class PostAddComponent implements OnInit, OnDestroy {
   get doc(): AbstractControl {
     return this.form.get("editorContent");
   }
-  constructor(private upload: FileUploadService,private categoryService:CategoryService){
+  constructor(private upload: FileUploadService,private postService:PostService,private categoryService:CategoryService){
 
   }
 
@@ -66,14 +68,22 @@ this.categoryService.getCategory().subscribe((res:any)=>{
     this.editor.destroy();
   }
   save(res:any){
-    console.log(this.html)
+    this.post.description=this.html;
+    this.post.imageUrlId=this.imageUrl.id;
+    this.postService.savePost(this.post).subscribe(res=>{
+      console.log(res)
+    })
+    // console.log(this.html)
 
   }
 
   public uploadFile = (files) => {
     
-    this.upload.Upload(files).subscribe(event => {
-        console.log(event)
+    this.upload.Upload(files).subscribe((res:any) => {
+        if(res){
+          console.log(res)
+          this.imageUrl=res.data;
+        }
         }
       );
   }

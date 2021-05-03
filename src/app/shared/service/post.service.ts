@@ -6,17 +6,17 @@ import { AuthService } from './auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class PostService {
 
   constructor(private http: HttpClient,private authService:AuthService) { }
 
 
-  saveCategory(formData) {
-    return this.http.post(this.authService.APPSERVER + '/Category/AddCategory', formData);
+  savePost(formData) {
+    return this.http.post(this.authService.APPSERVER + '/Post/AddPost', formData);
   }
 
-  getCategory() {
-    return this.http.get(this.authService.APPSERVER + '/Category/GetCategory');
+  getPost() {
+    return this.http.get(this.authService.APPSERVER + '/Post/GetPost');
   }
 
 }

@@ -16,14 +16,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Samppa Nori</td>
-                  <td>2012/01/01</td>
+                <tr *ngFor="let item of lstCategory">
+                  <td>{{item.name}}</td>
+                  <td>{{item.description}}</td>
                   <td>
-                    <span class="badge badge-success">Active</span>
-                    <span class="badge badge-secondary">Inactive</span>
-                    <span class="badge badge-warning">Pending</span>
-                    <span class="badge badge-danger">Banned</span>
+                    <span *ngIf="item.status==1" class="badge badge-success">Active</span>
+                    <span *ngIf="item.status==2" class="badge badge-secondary">Inactive</span>
+                    
 
 
                   </td>

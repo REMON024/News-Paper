@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomeditorComponent } from './customeditor/customeditor.component';
 import { FileUploadService } from '../shared/service/file-upload.service';
+import { AppComponent } from '../app.component';
 
 
 @NgModule({
@@ -20,6 +21,8 @@ import { FileUploadService } from '../shared/service/file-upload.service';
     ReactiveFormsModule,
     HttpClientModule
     
-  ],providers:[FileUploadService]
+  ],providers:[FileUploadService],
+  bootstrap: [ AppComponent ]
+
 })
 export class PostModule { }

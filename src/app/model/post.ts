@@ -5,4 +5,5 @@ export class Post{
     public titleRoute:string;
     public description:string;
     public status:number;
+    public imageUrlId:number
 }
