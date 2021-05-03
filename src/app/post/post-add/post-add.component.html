@@ -2,16 +2,29 @@
 	<h2 class="title">Full featured editor demo</h2>
 
 	<div class="content">
-		<div class="display">
-			<!-- <div class="logo">
-				<img src="../assets/ngx-editor.svg" />
-				<div class="subtitle">Rich Text Editor for angular using ProseMirror</div>
-			</div> -->
-		</div>
+
+			  <div class="form-group row">
+				<label class="col-md-3 col-form-label" for="select1">Category</label>
+				<div class="col-md-9">
+				  <select id="select1" [(ngModel)]="post.categoryId" name="select1" class="form-control">
+					<option [value]="item.Id" *ngFor="let item of lstCategory">{{item.name}}</option>
+				  
+				  </select>
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label class="col-md-3 col-form-label" for="text-input">Title</label>
+				<div class="col-md-9">
+				  <input type="text" id="text-input" name="text-input" [(ngModel)]="post.title" class="form-control" placeholder="Title">
+				</div>
+			  </div>
 		<div class="row" style="margin-bottom:15px;">
 			<div class="col-md-3">
 			  <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
 			  <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+			</div>
+			<div col-md-4>
+				<img src='https://localhost:44339/Resources/Image_03-05-2021/03May202101054.png' alt="profile picture" style="width:60px; height:60px;">
 			</div>
 			<div class="col-md-4">
 			  <span class="upload" *ngIf="progress > 0">
@@ -49,19 +62,3 @@
 </div>
 
 
-<table class="table table-striped">
-	<thead>
-	  <tr>
-		<th scope="col">Image</th>
-		<th scope="col">Name</th>
-		<th scope="col">Address</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr>
-		<td><img src='https://localhost:44339/Resources/Image_03-05-2021/03May202101054.png' alt="profile picture" style="width:200px; height:100px;"></td>
-		<td>Name</td>
-		<td>Address</td>
-	  </tr>
-	</tbody>
-  </table>

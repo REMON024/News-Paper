@@ -6,6 +6,7 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 
 
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     FormsModule
-  ]
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AuthModule { }

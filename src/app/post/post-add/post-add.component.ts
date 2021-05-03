@@ -6,6 +6,8 @@ import {schema} from "ngx-editor";
 import plugins from "../plugin";
 import nodeViews from "../nodeviews";
 import { FileUploadService } from "src/app/shared/service/file-upload.service";
+import { CategoryService } from "src/app/shared/service/category.service";
+import { Post } from "src/app/model/post";
 
 @Component({
   selector: 'app-post-add',
@@ -21,6 +23,8 @@ export class PostAddComponent implements OnInit, OnDestroy {
   public progress: number;
   public message: string;
   public filename:string;
+  public lstCategory=[]
+  public post:Post=new Post();
   @Output() public onUploadFinished = new EventEmitter();
 
   editor: Editor;
@@ -42,11 +46,15 @@ export class PostAddComponent implements OnInit, OnDestroy {
   get doc(): AbstractControl {
     return this.form.get("editorContent");
   }
-  constructor(private upload: FileUploadService){
+  constructor(private upload: FileUploadService,private categoryService:CategoryService){
 
   }
 
   ngOnInit(): void {
+this.categoryService.getCategory().subscribe((res:any)=>{
+  this.lstCategory=res.data
+})
+
     this.editor = new Editor({
       schema,
       plugins,

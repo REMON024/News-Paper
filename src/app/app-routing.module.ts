@@ -16,6 +16,13 @@ const routes: Routes = [
         (m) => m.PostModule
       ),
   },
+  {
+    path: 'category',
+    loadChildren: () =>
+      import('./category/category.module').then(
+        (m) => m.CategoryModule
+      ),
+  },
 ];
 
 @NgModule({
